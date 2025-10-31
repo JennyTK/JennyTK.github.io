@@ -1,24 +1,11 @@
-/* 限制正文宽度 */
-.site-container { 
-  max-width: 1040px; 
-  margin: 0 auto; 
-}
+/* 统一布局宽度 */
+.site-container { max-width: 1040px; margin: 0 auto; }
 
-/* 头像圆形 */
-.avatar { 
-  width: 128px; 
-  height:128px; 
-  border-radius: 50%; 
-  object-fit: cover; 
-}
+/* 头像样式 */
+.avatar { width: 128px; height:128px; border-radius: 50%; object-fit: cover; }
 
-/* 让主按钮更显眼 */
-.btn-primary { 
-  --usa-button-bg: var(--usa-primary-vivid); 
-}
+/* 小号淡色文字 */
+.small-muted { font-size: .875rem; color: #6b6e73; }
 
-/* 页脚小字 */
-.small-muted { 
-  font-size: .875rem; 
-  color: #6b6e73; 
-}
+/* 导航当前项高亮（给 .usa-nav__link 上 is-active） */
+a.usa-nav__link.is-active span { text-decoration: underline; font-weight: 700; }

@@ -1,130 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tomoe Koketsu | Web Developer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
 
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: white;
-      border-bottom: 1px solid #eee;
-    }
+  <!-- USWDS -->
+  <link rel="stylesheet" href="https://unpkg.com/@uswds/uswds@3/dist/css/uswds.min.css">
+  <script src="https://unpkg.com/@uswds/uswds@3/dist/js/uswds-init.min.js"></script>
+  <script src="https://unpkg.com/@uswds/uswds@3/dist/js/uswds.min.js" defer></script>
 
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2 {
-      margin-bottom: 12px;
-    }
-
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
-
-    .skills {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .skill-box {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 22px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+  <!-- Custom -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
-    <img src="your-photo.jpg" alt="Profile Photo" class="profile-img" />
-    <h1>Tomoe Koketsu</h1>
-    <p>Front-End / Web Developer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+  <!-- Header -->
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container site-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <em class="usa-logo__text">
+            <a href="index.html" title="Home">Tomoe Koketsu</a>
+          </em>
+        </div>
+        <button class="usa-menu-btn">Menu</button>
+      </div>
+      <nav aria-label="Primary navigation" class="usa-nav">
+        <button class="usa-nav__close">
+          <img src="https://unpkg.com/@uswds/uswds@3/dist/img/usa-icons/close.svg" alt="close">
+        </button>
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a class="usa-nav__link is-active" href="index.html"><span>About</span></a>
+          </li>
+          <li class="usa-nav__primary-item">
+            <a class="usa-nav__link" href="resume.html"><span>Resume</span></a>
+          </li>
+          <li class="usa-nav__primary-item">
+            <a class="usa-nav__link" href="#contact"><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="container" id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Tomoe, a Web Developer specializing in front-end development and CMS platforms. I build clean, accessible, and responsive websites, with experience in Drupal, WordPress, and modern front-end practices. I enjoy improving user experiences and transforming ideas into intuitive digital interfaces.</p>
-  </div>
+  <main id="main-content">
+    <!-- Hero / About -->
+    <section class="usa-section">
+      <div class="grid-container site-container">
+        <div class="grid-row grid-gap">
+          <div class="tablet:grid-col-3 text-center">
+            <img src="img/profile.jpg" alt="Tomoe Koketsu headshot" class="avatar usa-image">
+          </div>
+          <div class="tablet:grid-col-9">
+            <h1 class="usa-prose">Front-End / Web Developer</h1>
+            <p class="usa-intro">
+              I build clean, accessible, and responsive websites using HTML, CSS, JavaScript, and CMS platforms. Experienced with Drupal and WordPress on federal health projects, focusing on usability, performance, and content workflows.
+            </p>
+            <div class="usa-button-group">
+              <a class="usa-button" href="resume.html">View Resume</a>
+              <a class="usa-button usa-button--outline" href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
 
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-box">
-        <strong>Front-End</strong>
-        <p>HTML, CSS, JavaScript, Responsive Design</p>
+        <h2 class="usa-prose margin-top-4">Skills</h2>
+        <div class="grid-row grid-gap">
+          <div class="tablet:grid-col-4">
+            <h3 class="usa-prose font-sans-lg">Front-End</h3>
+            <ul class="usa-list">
+              <li>HTML, CSS, JavaScript, Responsive Design</li>
+              <li>Accessibility (WCAG / Section 508)</li>
+              <li>Charts: Chart.js / Google Charts</li>
+            </ul>
+          </div>
+          <div class="tablet:grid-col-4">
+            <h3 class="usa-prose font-sans-lg">CMS</h3>
+            <ul class="usa-list">
+              <li>Drupal 8/9 (Content types, Views, Taxonomy)</li>
+              <li>WordPress (Blocks/Themes, SEO basics)</li>
+            </ul>
+          </div>
+          <div class="tablet:grid-col-4">
+            <h3 class="usa-prose font-sans-lg">Tools</h3>
+            <ul class="usa-list">
+              <li>Git, VS Code, Docker, Composer, Drush</li>
+              <li>Jira/Agile, Figma, Google Analytics</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="skill-box">
-        <strong>CMS</strong>
-        <p>Drupal 8/9, WordPress</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="usa-section usa-section--light">
+      <div class="grid-container site-container">
+        <h2 class="usa-prose">Contact</h2>
+        <ul class="usa-list">
+          <li>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></li>
+          <li>GitHub: <a href="https://github.com/tomoeK" target="_blank" rel="noopener">github.com/tomoeK</a></li>
+        </ul>
       </div>
-      <div class="skill-box">
-        <strong>Tools</strong>
-        <p>Git, VS Code, Composer, Drush, Docker</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="usa-footer">
+    <div class="grid-container site-container">
+      <div class="usa-footer__primary-section">
+        <div class="grid-row grid-gap">
+          <div class="mobile-lg:grid-col-12">
+            <p class="small-muted">© 2025 Tomoe Koketsu • Built with USWDS</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="container" id="resume" style="text-align:center;">
-    <h2>Resume</h2>
-    <p>You can view or download my resume below.</p>
-    <a class="resume-btn" href="resume.pdf" target="_blank">View Resume (PDF)</a>
-  </div>
-
-  <div class="container" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></p>
-    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourprofile</a></p>
-  </div>
-
-  <footer>
-    © 2025 Tomoe Koketsu
   </footer>
+
 </body>
 </html>

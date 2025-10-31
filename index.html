@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomoe Koketsu | Web Developer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      margin-bottom: 12px;
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    .skills {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .skill-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="your-photo.jpg" alt="Profile Photo" class="profile-img" />
+    <h1>Tomoe Koketsu</h1>
+    <p>Front-End / Web Developer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container" id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Tomoe, a Web Developer specializing in front-end development and CMS platforms. I build clean, accessible, and responsive websites, with experience in Drupal, WordPress, and modern front-end practices. I enjoy improving user experiences and transforming ideas into intuitive digital interfaces.</p>
+  </div>
+
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-box">
+        <strong>Front-End</strong>
+        <p>HTML, CSS, JavaScript, Responsive Design</p>
+      </div>
+      <div class="skill-box">
+        <strong>CMS</strong>
+        <p>Drupal 8/9, WordPress</p>
+      </div>
+      <div class="skill-box">
+        <strong>Tools</strong>
+        <p>Git, VS Code, Composer, Drush, Docker</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="resume" style="text-align:center;">
+    <h2>Resume</h2>
+    <p>You can view or download my resume below.</p>
+    <a class="resume-btn" href="resume.pdf" target="_blank">View Resume (PDF)</a>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourprofile</a></p>
+  </div>
+
+  <footer>
+    © 2025 Tomoe Koketsu
+  </footer>
+</body>
+</html>

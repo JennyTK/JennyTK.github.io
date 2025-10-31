@@ -1,1 +1,24 @@
+/* 限制正文宽度 */
+.site-container { 
+  max-width: 1040px; 
+  margin: 0 auto; 
+}
 
+/* 头像圆形 */
+.avatar { 
+  width: 128px; 
+  height:128px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+/* 让主按钮更显眼 */
+.btn-primary { 
+  --usa-button-bg: var(--usa-primary-vivid); 
+}
+
+/* 页脚小字 */
+.small-muted { 
+  font-size: .875rem; 
+  color: #6b6e73; 
+}

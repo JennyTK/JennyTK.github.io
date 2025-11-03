@@ -3,7 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tomoe Koketsu | Web Developer</title>
+
+  <title>Tomoe Koketsu | Front-End & Web Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Front-End & Web Developer skilled in building accessible and responsive websites using HTML, CSS, JavaScript, Drupal, and WordPress.">
+  <meta name="keywords" content="Front-End Developer, Web Developer, HTML, CSS, JavaScript, Drupal, WordPress, Accessibility, Portfolio, Tomoe Koketsu">
+  <meta name="author" content="Tomoe Koketsu">
+  <link rel="canonical" href="https://tomoeK.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tomoe Koketsu | Front-End & Web Developer">
+  <meta property="og:description" content="Web developer specializing in modern, accessible, and user-friendly websites using Drupal, WordPress, HTML, CSS, and JavaScript.">
+  <meta property="og:image" content="https://tomoeK.github.io/img/profile.jpg">
+  <meta property="og:url" content="https://tomoeK.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tomoe Koketsu | Front-End & Web Developer">
+  <meta name="twitter:description" content="Front-End developer crafting clean, accessible, and user-centered digital experiences.">
+  <meta name="twitter:image" content="https://tomoeK.github.io/img/profile.jpg">
+
+  <!-- Favicon & App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/img/favicons/favicon-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicons/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#061878" />
 
   <!-- USWDS -->
   <link rel="stylesheet" href="https://unpkg.com/@uswds/uswds@3/dist/css/uswds.min.css">
@@ -13,32 +42,32 @@
   <!-- Custom -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
+<body>
   <!-- Header -->
   <header class="usa-header usa-header--basic">
     <div class="usa-nav-container site-container">
       <div class="usa-navbar">
-        <div class="usa-logo">
-          <em class="usa-logo__text">
-            <a href="index.html" title="Home">Tomoe Koketsu</a>
-          </em>
-        </div>
-        <button class="usa-menu-btn">Menu</button>
+        <div class="usa-logo" aria-label="Home"></div>
+        <button class="usa-menu-btn" aria-controls="primary-nav" aria-expanded="false">Menu</button>
       </div>
-      <nav aria-label="Primary navigation" class="usa-nav">
-        <button class="usa-nav__close">
+      <nav aria-label="Primary navigation" class="usa-nav" id="primary-nav">
+        <button class="usa-nav__close" aria-label="Close">
           <img src="https://unpkg.com/@uswds/uswds@3/dist/img/usa-icons/close.svg" alt="close">
         </button>
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">
-            <a class="usa-nav__link is-active" href="index.html"><span>About</span></a>
+            <a class="usa-nav__link is-active" href="index.html"><span>Portfolio</span></a>
           </li>
           <li class="usa-nav__primary-item">
-            <a class="usa-nav__link" href="resume.html"><span>Resume</span></a>
+            <a class="usa-nav__link" href="documents/resume.pdf" target="_blank" rel="noopener">
+              <span>Resume</span>
+            </a>
           </li>
           <li class="usa-nav__primary-item">
-            <a class="usa-nav__link" href="#contact"><span>Contact</span></a>
+            <a class="usa-nav__link" href="https://www.linkedin.com/in/tomoe-koketsu/" target="_blank" rel="noopener">
+              <span>LinkedIn</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -49,25 +78,29 @@
     <!-- Hero / About -->
     <section class="usa-section">
       <div class="grid-container site-container">
-        <div class="grid-row grid-gap">
-          <div class="tablet:grid-col-3 text-center">
+        <div class="grid-row grid-gap margin-bottom-4">
+          <div class="tablet:grid-col-5 text-center">
             <img src="img/profile.jpg" alt="Tomoe Koketsu headshot" class="avatar usa-image">
           </div>
-          <div class="tablet:grid-col-9">
-            <h1 class="usa-prose">Front-End / Web Developer</h1>
+          <div class="tablet:grid-col-7">
+            <h1 class="usa-prose">Tomoe Koketsu</h1>
+            <h2 >Front-End / Web Developer</h2>
             <p class="usa-intro">
-              I build clean, accessible, and responsive websites using HTML, CSS, JavaScript, and CMS platforms. Experienced with Drupal and WordPress on federal health projects, focusing on usability, performance, and content workflows.
+              I build clean, accessible, and responsive websites using HTML, CSS, JavaScript, and CMS platforms.
+              Experienced with Drupal and WordPress on federal health projects, focusing on usability, performance, and content workflows.
             </p>
             <div class="usa-button-group">
-              <a class="usa-button" href="resume.html">View Resume</a>
-              <a class="usa-button usa-button--outline" href="#contact">Contact</a>
+              <a class="usa-button custom-primary" href="documents/resume.pdf" target="_blank" rel="noopener">View Resume [PDF - 719KB]</a>
             </div>
           </div>
         </div>
 
-        <h2 class="usa-prose margin-top-4">Skills</h2>
-        <div class="grid-row grid-gap">
-          <div class="tablet:grid-col-4">
+    <section class="usa-section skills-section">
+      <div class="site-container">
+        <h2 class="usa-prose margin-top-1 margin-bottom-2">Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-panel">
             <h3 class="usa-prose font-sans-lg">Front-End</h3>
             <ul class="usa-list">
               <li>HTML, CSS, JavaScript, Responsive Design</li>
@@ -75,14 +108,16 @@
               <li>Charts: Chart.js / Google Charts</li>
             </ul>
           </div>
-          <div class="tablet:grid-col-4">
+
+          <div class="skill-panel">
             <h3 class="usa-prose font-sans-lg">CMS</h3>
             <ul class="usa-list">
               <li>Drupal 8/9 (Content types, Views, Taxonomy)</li>
               <li>WordPress (Blocks/Themes, SEO basics)</li>
             </ul>
           </div>
-          <div class="tablet:grid-col-4">
+
+          <div class="skill-panel">
             <h3 class="usa-prose font-sans-lg">Tools</h3>
             <ul class="usa-list">
               <li>Git, VS Code, Docker, Composer, Drush</li>
@@ -93,31 +128,78 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="usa-section usa-section--light">
-      <div class="grid-container site-container">
-        <h2 class="usa-prose">Contact</h2>
+
+<section class="usa-section resume-section--accent">
+  <div class="grid-container site-container">
+    <h2 class="usa-prose margin-bottom-2">Resume</h2>
+    <div class="usa-accordion" aria-multiselectable="true">
+      
+
+      <!-- Work Experience -->
+      <h3 class="usa-accordion__heading">
+        <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="acc-work">
+          Work Experience
+        </button>
+      </h3>
+      <div id="acc-work" class="usa-accordion__content usa-prose">
+        <p><strong>Drupal Developer – Health IT Project (HealthIT.gov) — DSFederal</strong></p>
+        <ul>
+          <li>Built and maintained the full Drupal 8/9 site architecture for HealthIT.gov, configuring content types, views, and taxonomy to deliver scalable content structures that met federal web and accessibility standards.</li>
+          <li>Developed and optimized standalone HTML pages and reusable components outside the CMS to ensure pixel-perfect fidelity and RWD compliance across all devices.</li>
+          <li>Integrated Chart.js and other JavaScript libraries to visualize data and analytics within the CMS, helping content managers and stakeholders make data-driven decisions.</li>
+          <li>Managed development environments and project dependencies using Composer, Drush, and Docker, while leveraging Git and VS Code for collaborative version control and safe deployment workflows.</li>
+          <li>Supported cross-platform CMS operations by maintaining and updating the Buzz Blog in WordPress, aligning design consistency, accessibility, and media structure with Drupal-based assets.</li>
+          <li>Partnered with back-end developers, designers, and content teams to deliver high-performing, user-centered web solutions within strict federal accessibility and security requirements.</li>
+        </ul>
+        <p><strong>Web Content Specialist – CMS Project (Medicaid.gov) — DSFederal</strong></p>
+        <ul>
+          <li>Served as a Drupal administrator for Medicaid.gov, overseeing end-to-end content updates, quality assurance, and publishing operations for a large-scale public-facing federal website.</li>
+          <li>Ensured compliance with Section 508 accessibility standards by auditing and remediating HTML structure, alt text, and multimedia content for usability and inclusivity.</li>
+          <li>Streamlined publishing workflows and managed high-volume content requests efficiently through Jira and other ticketing systems.</li>
+          <li>Supported the creation of structured, media-rich, and policy-driven pages through close collaboration with designers and developers, maintaining design consistency and editorial accuracy.</li>
+          <li>Contributed to continuous improvements in CMS performance and documentation, helping the team deliver timely, accurate, and accessible content updates.</li>
+        </ul>
+        </div>
+
+              <!-- Technical Skills -->
+      <h3 class="usa-accordion__heading">
+        <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="acc-skills">
+          Technical Skills
+        </button>
+      </h3>
+      <div id="acc-skills" class="usa-accordion__content usa-prose">
         <ul class="usa-list">
-          <li>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></li>
-          <li>GitHub: <a href="https://github.com/tomoeK" target="_blank" rel="noopener">github.com/tomoeK</a></li>
+          <li><strong>Front-End:</strong> HTML, CSS, JS, RWD, WCAG/508</li>
+          <li><strong>CMS:</strong> Drupal 8/9 (CTs, Views, Taxonomy), WordPress (Blocks/Themes)</li>
+          <li><strong>Data Viz:</strong> Chart.js, Google Charts</li>
+          <li><strong>Tools:</strong> Git, VS Code, Docker, Composer, Drush, Jira</li>
         </ul>
       </div>
-    </section>
+
+        <!-- Education -->
+      <h3 class="usa-accordion__heading">
+        <button type="button" class="usa-accordion__button" aria-expanded="true" aria-controls="acc-education">
+          Education
+        </button>
+      </h3>
+      <div id="acc-education" class="usa-accordion__content usa-prose">
+        <p><strong>Trine University - Class of 2026 (expected)</strong> </p>
+<p>Master of Science in Information Systems</p>
+          <p>GPA: 3.90</p>
+        <p><strong>University of Maryland, Robert H. Smith School of Business - Class of 2021</strong> </p>
+          <p>Bachelor of Science in Information Systems</p>
+          <p>GPA: 3.60</p>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</section>
   </main>
 
-  <!-- Footer -->
-  <footer class="usa-footer">
-    <div class="grid-container site-container">
-      <div class="usa-footer__primary-section">
-        <div class="grid-row grid-gap">
-          <div class="mobile-lg:grid-col-12">
-            <p class="small-muted">© 2025 Tomoe Koketsu • Built with USWDS</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+<section class="usa-section margin-bottom-6">
+
 
 </body>
 </html>

@@ -1,0 +1,432 @@
+/* =========================
+   ① 品牌与主题变量（清爽科技蓝系）
+   ========================= */
+:root{
+  --brand-primary: #118AB2;       /* Header / 主要按钮 */
+  --brand-primary-light: #71C5E7; /* 浅蓝强调色（你选的） */
+  --brand-primary-dark: #0B5C7A;  /* 深阶蓝（备用/暗色） */
+  --brand-accent: #0b6bcf;        /* 可选的强调 */
+}
+
+/* 覆盖 USWDS 主色（让系统组件跟随你的品牌色） */
+:root{
+  --usa-primary: var(--brand-primary);
+  --usa-primary-vivid: var(--brand-primary-light);
+  --usa-link-color: var(--brand-primary);
+}
+
+/* =========================
+   ② 布局与排版
+   ========================= */
+.site-container { max-width: 1040px; margin: 0 auto; }
+
+.usa-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.usa-section--light { background: #f9fafb; }
+
+.usa-prose { max-width: 68ch; }
+.usa-intro { font-size: 1.15rem; line-height: 1.75; color:#374151; }
+
+h1.usa-prose { font-size: clamp(1.75rem, 2.2vw + 1rem, 2.25rem); }
+h2.usa-prose { font-size: clamp(1.25rem, 1.3vw + 1rem, 1.5rem); margin-top: .25rem; }
+
+.small-muted { font-size: .875rem; color: #6b7280; }
+
+/* =========================
+   ③ Header（全宽、蓝底白字、Hover 缩小+下划线）
+   ========================= */
+/* 让 Header 背景铺满屏幕 */
+.usa-header .site-container { max-width: none !important; padding-inline: 24px; }
+
+/* 背景、文字色（放后面以确保覆盖 USWDS） */
+.usa-header,
+.usa-header--basic,
+.usa-header.usa-header--basic {
+  background-color: var(--brand-primary) !important;
+  border-bottom: none !important;
+}
+
+.usa-header .usa-navbar,
+.usa-header .usa-nav { background-color: transparent !important; }
+
+/* 白字：logo、菜单、菜单按钮 */
+.usa-header .usa-logo a,
+.usa-header .usa-nav__link,
+.usa-header .usa-menu-btn { color: #ffffff !important; }
+
+/* Hover：不变浅蓝；缩小一点 + 下划线（不想抖动时用 scale 方案） */
+.usa-header .usa-nav__link span { position: relative; }
+.usa-header .usa-nav__link:hover span,
+.usa-header .usa-nav__link:focus span {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  transform: scale(0.96);
+  display: inline-block;
+}
+.usa-header .usa-nav__link.is-active span {
+  color: #fff !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* 移动端关闭图标改白 */
+.usa-header .usa-nav__close img { filter: invert(1) brightness(2); }
+
+/* =========================
+   ④ 全局元素：链接与按钮
+   ========================= */
+a { color: var(--brand-primary); }
+a:hover, a:focus { color: var(--brand-primary-light); text-decoration: underline; }
+
+.usa-button.custom-primary{
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color:#fff;
+}
+.usa-button.custom-primary:hover{
+  background: var(--brand-primary-light);
+  border-color: var(--brand-primary-light);
+}
+
+/* =========================
+   ⑤ 头像与卡片
+   ========================= */
+.avatar{
+  width: 140px; height: 140px; border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, .08);
+  border: 3px solid #fff;
+}
+
+.skill-panel{
+  background:#fff; border:1px solid #e5e7eb; border-radius: .75rem;
+  padding: 1rem 1.25rem; height: 100%;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, .04);
+}
+.skill-panel h3{ margin-top: .25rem; }
+.skill-panel .usa-list{ margin-top:.25rem; }
+
+/* =========================
+   ⑥ Accordion（同色系：外层淡蓝、Header 稍深、Body 白）
+   ========================= */
+/* 颜色变量（与 brand-primary-light 同家族） */
+:root{
+  --acc-bg:    #E6F6FB;  /* 外层区块淡蓝（≈ #71C5E7 的低饱和） */
+  --acc-head:  #CFEFF8;  /* Header 背景（比外层更明显） */
+  --acc-bd:    #FFFFFF;  /* Body 背景 */
+  --acc-bdr:   #B7E4F5;  /* 描边色 */
+}
+
+/* 整块 Resume section 套上背景 */
+.resume-section--accent{ background: var(--acc-bg); }
+
+/* 让内层容器更像“信息卡区域” */
+.resume-section--accent .site-container{ padding-block: 1.25rem; }
+
+/* Header 按钮：浅蓝底 + 深蓝字 + 圆角 + 描边 */
+.resume-section--accent .usa-accordion__button{
+  background: var(--acc-head);
+  color: var(--brand-primary) !important;
+  border: 1px solid var(--acc-bdr);
+  border-radius: 10px;
+  padding-block: .75rem;
+  font-weight: 700;
+}
+
+/* Hover/Focus 的细微强调 */
+.resume-section--accent .usa-accordion__button:hover,
+.resume-section--accent .usa-accordion__button:focus{
+  background: #BFE8F4; /* 比 head 再明显一点 */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 内容白底卡片，和 header 紧密贴合 */
+.resume-section--accent .usa-accordion__content{
+  background: var(--acc-bd);
+  border: 1px solid var(--acc-bdr);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 1rem 1.25rem;
+  margin-top: -6px;
+}
+
+.resume-section--accent .usa-accordion__heading{
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+.resume-section--accent .usa-accordion__heading:first-of-type{ margin-top: 0; }
+.resume-section--accent .usa-accordion__content:last-of-type{ margin-bottom: .25rem; }
+
+/* =========================
+   ⑦ 响应式
+   ========================= */
+@media (max-width: 640px){
+  .usa-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .avatar{ width: 120px; height: 120px; margin-bottom: .75rem; }
+}
+
+/* =========================
+   ⑧ 深色模式（保留）
+   ========================= */
+@media (prefers-color-scheme: dark){
+  body{ background:#0b1220; color:#e5e7eb; }
+  .usa-section--light{ background:#0f172a; }
+
+  /* Header 深色化 */
+  .usa-header,
+  .usa-header--basic,
+  .usa-header.usa-header--basic {
+    background-color: var(--brand-primary-dark) !important;
+  }
+
+  .usa-footer{ background:#0b1220; border-color:#1f2937; }
+  .skill-panel{ background:#0b1220; border-color:#1f2937; box-shadow:none; }
+
+  /* Accordion 在暗色里也保持层次 */
+  .resume-section--accent{ background:#0f172a; }
+  .resume-section--accent .usa-accordion__button{
+    background:#132036; color:#e5e7eb !important; border-color:#1f2937;
+  }
+  .resume-section--accent .usa-accordion__button:hover,
+  .resume-section--accent .usa-accordion__button:focus{
+    background:#192a45;
+  }
+  .resume-section--accent .usa-accordion__content{
+    background:#0b1220; border-color:#1f2937;
+  }
+
+  .small-muted{ color:#94a3b8; }
+  .usa-button.usa-button--outline{ color:#e5e7eb; border-color:#334155; }
+}
+
+/* ========== Header：高度 ~80px、hover 无蓝线、整体更靠左 ========== */
+/* 高度（M方案，约 76–84px 视觉高度） */
+.usa-header .usa-navbar { padding-block: 1.1rem; }
+.usa-header .usa-nav    { padding-block: 0.6rem; }
+
+/* 更靠左一些（比原来少一点左右内边距） */
+.usa-header .usa-nav-container { padding-left: 16px; padding-right: 24px; }
+
+/* 去掉 USWDS hover 的蓝色下划线/阴影，仅保留我们的白色下划线 */
+.usa-header .usa-nav__link,
+.usa-header .usa-nav__link:hover,
+.usa-header .usa-nav__link:focus {
+  box-shadow: none !important;            /* 去除可能的下划线阴影 */
+  border-bottom: none !important;         /* 去除可能的底边线 */
+  text-decoration-color: #fff !important; /* 我们要的白色下划线 */
+}
+
+/* ========== Skills Section：浅蓝背景 + 三张卡片等高 ========== */
+/* 整块浅蓝背景（与 Accordion 同色系的淡色） */
+.skills-section { background: var(--acc-bg); }
+
+/* 使用 CSS Grid 保证三张卡片等高 */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* 卡片本体撑满高度 */
+.skills-grid .skill-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 小屏改为 1 列/2 列自适应 */
+@media (max-width: 960px){
+  .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px){
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== Resume（Accordion）全宽 + 带边框，和 header 一样宽 ========== */
+/* 跟 header 一样全宽（取消 1040px 限制），用了品牌深蓝做 section 背景 */
+.resume-section--accent {
+  background: var(--brand-primary);
+}
+.resume-section--accent .site-container {
+  max-width: none !important;     /* 全宽 */
+  padding-inline: 16px;           /* 与 header 对齐的左右内边距 */
+  padding-block: 1.25rem;         /* 上下留白 */
+}
+
+/* 给整个 Accordion 外框加描边和圆角（在深蓝背景上更有层次） */
+.resume-section--accent .usa-accordion {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+/* Accordion 头：浅蓝条（同色系），深蓝字 */
+.resume-section--accent .usa-accordion__button{
+  background: var(--acc-head);
+  color: var(--brand-primary) !important;
+  border: 1px solid var(--acc-bdr);
+  border-radius: 10px;
+  padding-block: .75rem;
+  font-weight: 700;
+}
+
+/* Hover/Focus 细节 */
+.resume-section--accent .usa-accordion__button:hover,
+.resume-section--accent .usa-accordion__button:focus{
+  background: #BFE8F4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 内容白底，与 header 下缘贴合；保持卡片感 */
+.resume-section--accent .usa-accordion__content{
+  background: #fff;
+  border: 1px solid var(--acc-bdr);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 1rem 1.25rem;
+  margin-top: -6px;
+}
+
+/* 面板间距 */
+.resume-section--accent .usa-accordion__heading{
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+.resume-section--accent .usa-accordion__heading:first-of-type{ margin-top: 0; }
+.resume-section--accent .usa-accordion__content:last-of-type{ margin-bottom: .25rem; }
+
+
+/* ===== Header 细调：去掉USWDS蓝线、再往左一点、80px视觉高度 ===== */
+/* 高度（约80px观感） */
+.usa-header .usa-navbar { padding-block: 1.1rem; }
+.usa-header .usa-nav    { padding-block: 0.6rem; }
+
+/* 再往左一点（根据喜好 8~24px 调） */
+.usa-header .usa-nav-container { padding-left: 12px; padding-right: 24px; }
+
+/* USWDS 有时用 inset box-shadow 或伪元素做下划线——一起干掉 */
+.usa-header .usa-nav__link,
+.usa-header .usa-nav__link:hover,
+.usa-header .usa-nav__link:focus {
+  box-shadow: none !important;
+  border-bottom: 0 !important;
+}
+.usa-header .usa-nav__link::after { /* 某些版本的装饰线 */
+  content: none !important;
+}
+
+/* 我们自定义的 hover 保留白色下划线 + 轻缩放 */
+.usa-header .usa-nav__link span { position: relative; }
+.usa-header .usa-nav__link:hover span,
+.usa-header .usa-nav__link:focus span {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  transform: scale(0.96);
+  display: inline-block;
+}
+
+/* 如果左侧logo空了还占位，就彻底归零（你删了 logo 文本，但容器可能留空隙） */
+.usa-header .usa-logo { margin-right: 0 !important; width: 0 !important; }
+
+/* ===== Skills：三卡等高 + 区块浅蓝底（如果你还在用 USWDS 的 grid-row 结构） ===== */
+/* 外层浅蓝底（已加过，可保留） */
+.skills-section { background: var(--acc-bg); }
+
+/* 不改HTML也能等高：让列容器变成 flex 伸展，卡片100%高度 */
+.grid-row.skills-equalize { align-items: stretch; }
+.grid-row.skills-equalize > [class*="grid-col"] { display: flex; }
+.grid-row.skills-equalize > [class*="grid-col"] .skill-panel { flex: 1; display:flex; flex-direction: column; }
+
+/* 如果你已经改成 .skills-grid（CSS Grid），也可以继续用现成那套，无需这段 */
+
+/* 卡片内的列表底部留白一致 */
+.skill-panel .usa-list { margin-top: .25rem; margin-bottom: 0; }
+
+/* ===== Resume / Accordion：全宽、深蓝底、带边框的内容块 ===== */
+.resume-section--accent {
+  background: var(--brand-primary);
+}
+.resume-section--accent .site-container {
+  max-width: none !important;
+  padding-inline: 12px;   /* 与 header 更贴齐一点 */
+  padding-block: 1.25rem;
+}
+
+/* 外框与内部样式（之前给的可保留） */
+.resume-section--accent .usa-accordion {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 12px;
+  padding: 8px;
+}
+.resume-section--accent .usa-accordion__button{
+  background: var(--acc-head);
+  color: var(--brand-primary) !important;
+  border: 1px solid var(--acc-bdr);
+  border-radius: 10px;
+  padding-block: .75rem;
+  font-weight: 700;
+}
+.resume-section--accent .usa-accordion__button:hover,
+.resume-section--accent .usa-accordion__button:focus{
+  background: #BFE8F4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.resume-section--accent .usa-accordion__content{
+  background: #fff;
+  border: 1px solid var(--acc-bdr);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 1rem 1.25rem;
+  margin-top: -6px;
+}
+
+/* ===== Skills Section：浅蓝背景 + 3卡等高 + 响应式 ===== */
+.skills-section {
+  background: var(--acc-bg);  /* 使用与 Resume 同系的淡蓝色 */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* 卡片撑满高度 & 内部结构竖向排布（标题+列表） */
+.skills-grid .skill-panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: .75rem;
+  padding: 1rem 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, .04);
+}
+
+.skill-panel h3 {
+  margin-top: .25rem;
+  margin-bottom: .5rem;
+}
+
+.skill-panel .usa-list {
+  margin-top: .25rem;
+  margin-bottom: 0;
+}
+
+/* Responsive：平板=2个一行、手机=1个一行 */
+@media (max-width: 960px){
+  .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px){
+  .skills-grid { grid-template-columns: 1fr; }
+}

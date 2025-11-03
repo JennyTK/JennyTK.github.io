@@ -250,9 +250,10 @@ a:hover, a:focus { color: var(--brand-primary-light); text-decoration: underline
   background: var(--brand-primary);
 }
 .resume-section--accent .site-container {
-  max-width: none !important;     /* 全宽 */
-  padding-inline: 16px;           /* 与 header 对齐的左右内边距 */
-  padding-block: 1.25rem;         /* 上下留白 */
+  background: transparent !important;
+  max-width: 1040px;     /* 内容仍保持居中 */
+  margin: 0 auto;
+  padding-inline: 16px;
 }
 
 /* 给整个 Accordion 外框加描边和圆角（在深蓝背景上更有层次） */
@@ -351,6 +352,9 @@ a:hover, a:focus { color: var(--brand-primary-light); text-decoration: underline
 /* ===== Resume / Accordion：全宽、深蓝底、带边框的内容块 ===== */
 .resume-section--accent {
   background: var(--brand-primary);
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .resume-section--accent .site-container {
   max-width: none !important;
@@ -391,6 +395,7 @@ a:hover, a:focus { color: var(--brand-primary-light); text-decoration: underline
 /* ===== Skills Section：浅蓝背景 + 3卡等高 + 响应式 ===== */
 .skills-section {
   background: var(--acc-bg);  /* 使用与 Resume 同系的淡蓝色 */
+  width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -430,3 +435,114 @@ a:hover, a:focus { color: var(--brand-primary-light); text-decoration: underline
 @media (max-width: 640px){
   .skills-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ===== Resume / Accordion：去边框，头和内容同宽对齐 ===== */
+
+/* 外层容器不要边框/内边距，否则会让里面看起来“缩进去” */
+.resume-section--accent .usa-accordion{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* 标题按钮：浅蓝底，无边框，左右内边距与内容一致，圆角在上缘 */
+.resume-section--accent .usa-accordion__button{
+  background: var(--acc-head) !important;
+  color: var(--brand-primary) !important;
+  border: 0 !important;
+  border-radius: 10px 10px  0 0!important;
+  padding: .75rem 1.25rem !important;   /* ↔ 与内容对齐 */
+  font-weight: 700;
+  width: 100%;                          /* 保证满宽 */
+  display: block;                       /* 去掉内联差异 */
+}
+
+/* 取消 USWDS 可能的强烈 focus 外发光，改成更轻的描边（可选） */
+.resume-section--accent .usa-accordion__button:focus{
+  box-shadow: none !important;
+  outline: 2px solid #68b8da;          /* 柔和蓝 */
+  outline-offset: 2px;
+}
+
+/* 内容白底：无边框，与 header 无缝贴合，左右内边距匹配 */
+.resume-section--accent .usa-accordion__content{
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 0 10px 10px !important;
+  padding: 1rem 1.25rem !important;    /* ↔ 与按钮对齐 */
+  margin-top: 0 !important;            /* 不再上移 */
+  max-width: 100%;
+}
+
+/* 面板之间的间距用外边距控制（而不是外层 padding/border） */
+.resume-section--accent .usa-accordion__heading{
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.resume-section--accent .usa-accordion__heading:first-of-type{
+  margin-top: 0 !important;
+}
+
+.usa-list li, .usa-prose>ol li, .usa-prose>ul li {
+    margin-bottom: .25em;
+    max-width: 90%;
+}
+
+/* ===== Full-bleed colored sections ===== */
+/* Skills：浅蓝背景铺满全宽，内容仍居中（1040px） */
+.skills-section{
+  background: var(--acc-bg);
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.skills-section .site-container{
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-inline: 4rem;
+}
+
+/* Resume：深蓝背景铺满全宽，内容居中（1040px） */
+.resume-section--accent{
+  background: var(--brand-primary);
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.resume-section--accent .site-container{
+  /* ✅ 把之前的 max-width:none 覆盖回居中布局 */
+  max-width: 1040px !important;
+  margin: 0 auto;
+  padding-inline: 4rem;
+  background: transparent !important;
+}
+
+/* Accordion：去边框，header/body 同宽对齐 */
+.resume-section--accent .usa-accordion{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+.resume-section--accent .usa-accordion__button{
+  background: var(--acc-head) !important;
+  color: var(--brand-primary) !important;
+  border: 0 !important;
+  border-radius: 10px 10px 0 0 !important;
+  padding: .75rem 1.25rem !important;
+  font-weight: 700;
+  width: 100%;
+  display: block;
+}
+.resume-section--accent .usa-accordion__content{
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 0 10px 10px !important;
+  padding: 1rem 1.25rem !important;
+  margin-top: 0 !important;
+}
+.resume-section--accent .usa-accordion__heading{
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.resume-section--accent .usa-accordion__heading:first-of-type{ margin-top: 0 !important; }

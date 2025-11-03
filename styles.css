@@ -27,7 +27,7 @@
 .usa-section{ padding-top:3.5rem; padding-bottom:3.5rem; }
 .usa-section--light{ background:#f9fafb; }
 
-.usa-prose{ max-width:68ch; }
+.usa-prose{ max-width:  100%; }
 .usa-intro{ font-size:1.15rem; line-height:1.75; color:#374151; }
 h1.usa-prose{ font-size:clamp(1.75rem, 2.2vw + 1rem, 2.25rem); }
 h2.usa-prose{ font-size:clamp(1.25rem, 1.3vw + 1rem, 1.5rem); margin-top:.25rem; }
@@ -83,6 +83,7 @@ h2.usa-prose{ font-size:clamp(1.25rem, 1.3vw + 1rem, 1.5rem); margin-top:.25rem;
 
 /* 关闭图标变白（移动端） */
 .usa-header .usa-nav__close img{ filter:invert(1) brightness(2); }
+.usa-header .usa-nav__close {margin: -.75rem -1rem 0rem auto;}
 
 /* =========================
    ④ 链接与按钮
@@ -104,7 +105,7 @@ a:hover, a:focus{ color:var(--brand-primary-light); text-decoration:underline; }
    ⑤ 头像与卡片（通用）
    ========================= */
 .avatar{
-  width:140px; height:140px; border-radius:50%;
+  width:400px; height:400px; border-radius:20%;
   object-fit:cover;
   box-shadow:0 6px 14px rgba(2,6,23,.08);
   border:3px solid #fff;
@@ -201,7 +202,8 @@ a:hover, a:focus{ color:var(--brand-primary-light); text-decoration:underline; }
    ========================= */
 @media (max-width:640px){
   .usa-section{ padding-top:2.5rem; padding-bottom:2.5rem; }
-  .avatar{ width:120px; height:120px; margin-bottom:.75rem; }
+  .avatar{ width:300px; height:300px; margin-bottom:.75rem; }
+  .usa-nav__primary .usa-nav__primary-item {background-color: #005ea2;}
 }
 
 /* =========================
@@ -318,7 +320,6 @@ a:hover, a:focus{ color:var(--brand-primary-light); text-decoration:underline; }
 }
 
 /* ===== Minimal Footer: 深蓝底 + 白字一句话 ===== */
-
 .site-footer-minimal {
   background: var(--brand-primary);
   color: #ffffff;
